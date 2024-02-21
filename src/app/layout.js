@@ -26,7 +26,7 @@ export const metadata = {
                 alt="User Image"
                 className="w-[auto] h-16 rounded-full mb-2 m-[auto]"
               />
-              <p className="text-lg text-white">Hammad</p>
+              <p className="text-lg text-white">Hammad Javed</p>
               {/* <p className="text-sm text-gray-300">{name}</p> */}
             </div>
            <NavMenu></NavMenu>
