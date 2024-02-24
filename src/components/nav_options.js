@@ -51,7 +51,7 @@ const NavMenu = () => {
                     </ul>
                 )}
 
-                <Link href="/sld" className="block py-2 px-4 hover:bg-[#12a7ff] rounded">
+                <Link href="/sld" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "/sld" ? 'bg-[#2b388f] text-white mx-2' : ''}`}>
                     SLD
                 </Link>
                 <Link href="#" className="block py-2 px-4 hover:bg-[#12a7ff] rounded">
