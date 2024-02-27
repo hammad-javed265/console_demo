@@ -33,7 +33,7 @@ const Preloader = () => {
   </g>
   
 </svg>
-<p className='text-[28px]'>
+<p className='text-[28px] font-bold'>
     Jahaann The World Of IIOT
 </p>
     </div>
