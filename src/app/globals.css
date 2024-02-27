@@ -43,3 +43,23 @@ body {
     transform: translateX(0);
   }
 }
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #45d6b5;
+  background: rgb(235, 244, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+.preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
 
@@ -16,6 +16,12 @@ const SettingMenu = () => {
         setShowReportsSubMenu(!showReportsSubMenu);
     };
     const pathname = usePathname();
+    useEffect(() => {
+        // Check if the current pathname matches the expected active route
+        if (pathname === '/user') {
+          setShowDashboardSubMenu(true);
+        }
+    }, [pathname]);
     return (
         <div>
 
@@ -38,7 +44,7 @@ const SettingMenu = () => {
                 </Link>
 
                 {showDashboardSubMenu && (
-                    <ul className="bg-[#fff] ml-8 text-black rounded mr-1 text-[14px]">
+                    <ul className="bg-[#fff] ml-8 text-black rounded mr-1 text-[14px] slide-from-right">
                         <li>
                             <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
                                 - Add Roles

@@ -8,9 +8,9 @@ import DiagramMenu from '@/components/diagram_options';
 import TrendMenu from '@/components/trend_options';
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCog, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faDashboard, faGear, faProjectDiagram, faArrowTrendUp, faBell, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import SettingMenu from '@/components/setting_options';
-
+import Preloader from '@/components/Preloader';
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -33,6 +33,7 @@ const DynamicMenu = ({ activeTab }) => {
 };
 
 export default function RootLayout({ children }) {
+  const [loading] = useState(true);
   const [activeTab, setActiveTab] = useState('Home');
   const pathname = usePathname();
 
@@ -53,14 +54,16 @@ export default function RootLayout({ children }) {
       // Add more conditions for other pathnames if needed
       return prevTab;
     });
+  
   }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
+      {loading && <Preloader />} {/* Show preloader if loading is true */}
         <div className="flex">
           {/* <aside className="flex-shrink-0 w-64 bg-gray-800 text-white h-[97vh] m-3 rounded-2xl"> */}
           <aside className="flex-shrink-0 w-72 text-white h-[97vh] m-3 rounded-2xl relative overflow-hidden bg-center bg-contain bg-no-repeat" style={{ backgroundImage: 'url("./logo.png")', background: 'rgb(0,127,255)', background: 'linear-gradient(180deg, rgba(0,127,255,1) 0%, rgba(17,164,255,1) 50%, rgba(57,255,255,1) 100%)' }}>
-            <div className="p-4 text-center rounded-2xl" style={{ boxShadow: 'inset grey 0px 0px 60px -25px' }}>
+            <div className="p-4 text-center rounded-2xl" style={{ boxShadow: 'inset grey 0px 0px 60px -15px' }}>
               <img
                 src={'./user.png'}
                 alt="User Image"
@@ -81,25 +84,25 @@ export default function RootLayout({ children }) {
             {/* <NavBar></NavBar> */}
             <header className="bg-[#0091cf] text-white m-3 p-2 rounded-2xl flex">
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
-                <p className={`px-4 py-1 cursor-pointer rounded-lg ${pathname === '/' ? 'bg-white text-black' : ''}`}>Home</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> DashBoard</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Diagram')}>
-                <p className={`px-4 py-1 cursor-pointer rounded-lg ${pathname === '/sld' ? 'bg-white text-black' : ''}`}>Diagram</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/sld' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faProjectDiagram} /> Diagram</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Trends')}>
-                <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Trends' ? 'bg-white text-black' : ''}`}>Trends</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Trends' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faArrowTrendUp} /> Trends</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Alarms')}>
-                <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Alarms' ? 'bg-white text-black' : ''}`}>Alarms</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Alarms' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faBell} /> Alarms</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Reports')}>
-                <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Reports' ? 'bg-white text-black' : ''}`}>Reports</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Reports' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faFileLines} /> Reports</p>
               </Link>
               {/* <Link href="/user" className={`py-[8px] px-4`}>
                 <p className={`px-4 py-1 cursor-pointer rounded-lg ${pathname == "/user" ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faUserCog} /> User Managment</p>
               </Link> */}
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Setting')}>
-                <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Setting' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faGear} /> Settings</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Setting' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faGear} /> Settings</p>
               </Link>
               <img
                 src={'./logout.png'}
