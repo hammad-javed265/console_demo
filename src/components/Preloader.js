@@ -13,7 +13,7 @@ const Preloader = () => {
     }, []);
   return (
     <div className={`preloader ${hidden ? 'hidden' : ''}`}>
-    <svg className='w-64 mt-[-150px]' viewBox="0 0 80 80">
+    <svg className='w-56 mt-[-150px]' viewBox="0 0 80 80">
   <defs>
     <clipPath id="circleClip">
       <circle cx="40" cy="40" r="30" />
