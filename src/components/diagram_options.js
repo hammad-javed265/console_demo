@@ -51,7 +51,7 @@ const DiagramMenu = () => {
                 </Link>
 
                 {showDashboardSubMenu && (
-                    <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-1 text-[14px]">
+                    <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-5 text-[14px]">
                         <li>
                             <Link href="/sld" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "/sld" ? 'bg-[#2b37cc] text-white' : ''}`}>
                                 - Plant
@@ -82,7 +82,7 @@ const DiagramMenu = () => {
                     </svg>
                 </Link>
                 {showReportsSubMenu && (
-                    <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-1 text-[14px]">
+                    <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-5 text-[14px]">
                         <li>
                             <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
                                 - Plant
@@ -112,7 +112,7 @@ const DiagramMenu = () => {
                     </svg>
                 </Link>
                 {showPlantSubMenu && (
-                    <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-1 text-[14px]">
+                    <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-5 text-[14px]">
                         <li>
                             <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
                                 - Plant

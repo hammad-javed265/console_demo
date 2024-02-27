@@ -44,7 +44,7 @@ const SettingMenu = () => {
                 </Link>
 
                 {showDashboardSubMenu && (
-                    <ul className="bg-[#fff] ml-8 text-black rounded mr-1 text-[14px] slide-from-right">
+                    <ul className="bg-[#fff] ml-8 text-black rounded mr-5 text-[14px] slide-from-right">
                         <li>
                             <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
                                 - Add Roles

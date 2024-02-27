@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
           </aside>
           <div className="flex-1 flex flex-col overflow-hidden">
             {/* <NavBar></NavBar> */}
-            <header className="bg-[#0091cf] text-white m-3 p-2 rounded-2xl flex">
+            <header className="bg-[#0091cf] text-white mx-2 my-3 p-1 rounded-2xl flex">
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
                 <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> DashBoard</p>
               </Link>
@@ -90,19 +90,19 @@ export default function RootLayout({ children }) {
                 <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/sld' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faProjectDiagram} /> Diagram</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Trends')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Trends' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faArrowTrendUp} /> Trends</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/custom_trend' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faArrowTrendUp} /> Trends</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Alarms')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Alarms' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faBell} /> Alarms</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '#' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faBell} /> Alarms</p>
               </Link>
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Reports')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Reports' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faFileLines} /> Reports</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '#' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faFileLines} /> Reports</p>
               </Link>
               {/* <Link href="/user" className={`py-[8px] px-4`}>
                 <p className={`px-4 py-1 cursor-pointer rounded-lg ${pathname == "/user" ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faUserCog} /> User Managment</p>
               </Link> */}
               <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Setting')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${activeTab === 'Setting' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faGear} /> Settings</p>
+                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/user' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faGear} /> Settings</p>
               </Link>
               <img
                 src={'./logout.png'}
