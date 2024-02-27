@@ -6,20 +6,20 @@ import { usePathname } from "next/navigation";
 import Link from 'next/link';
 
 const NavBar = () => {
-    // const [activeTab, setActiveTab] = useState('Home');
+    const [activeTab, setActiveTab] = useState('Home');
 
-    // const handleTabClick = (tab) => {
-    //     setActiveTab(tab);
-    // };
+    const handleTabClick = (tab) => {
+        setActiveTab(tab);
+    };
     const pathname = usePathname();
 // console.log(activeTab);
     return (
         <div>
             <header className="bg-[#0091cf] text-white m-3 p-2 rounded-2xl flex">
-                {/* <Link className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
+                <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
                     <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Home' ? 'bg-white text-black' : ''}`}>Home</p>
                 </Link>
-                <Link className={`py-[8px] px-4`} onClick={() => handleTabClick('Diagram')}>
+                {/* <Link className={`py-[8px] px-4`} onClick={() => handleTabClick('Diagram')}>
                     <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Diagram' ? 'bg-white text-black' : ''}`}>Diagram</p>
                 </Link>
                 <Link className={`py-[8px] px-4`} onClick={() => handleTabClick('Trends')}>
