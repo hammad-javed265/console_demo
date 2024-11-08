@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDashboard, faGear, faProjectDiagram, faArrowTrendUp, faBell, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import SettingMenu from '@/components/setting_options';
 import Preloader from '@/components/Preloader';
+import Custom_dashMenu from '@/components/cutom_dashboard';
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -26,8 +27,12 @@ const DynamicMenu = ({ activeTab }) => {
   } else if (activeTab === 'Trends') {
     return <TrendMenu />;
   } else if (activeTab === 'Setting') {
-    return <SettingMenu/>;
+    return <SettingMenu />;
+  } else if (activeTab === 'Custom') {
+    return <Custom_dashMenu />;
+
   }
+  console.log(activeTab);
   // Add more conditions for other tabs if needed
   return null; // Default case, return null or any default component
 };
@@ -50,71 +55,80 @@ export default function RootLayout({ children }) {
         return 'Trends';
       } else if (window.location.pathname === '/user') {
         return 'Setting';
+      } else if (window.location.pathname === '/dash_1') {
+        return 'Custom';
       }
       // Add more conditions for other pathnames if needed
       return prevTab;
     });
-  
+
   }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
-      {loading && <Preloader />} {/* Show preloader if loading is true */}
-        <div className="flex">
-          {/* <aside className="flex-shrink-0 w-64 bg-gray-800 text-white h-[97vh] m-3 rounded-2xl"> */}
-          <aside className="flex-shrink-0 w-72 text-white h-[97vh] m-3 rounded-2xl relative overflow-hidden bg-center bg-contain bg-no-repeat" style={{ backgroundImage: 'url("./logo.png")', background: 'rgb(0,127,255)', background: 'linear-gradient(180deg, rgba(0,127,255,1) 0%, rgba(17,164,255,1) 50%, rgba(57,255,255,1) 100%)' }}>
-            <div className="p-4 text-center rounded-2xl" style={{ boxShadow: 'inset grey 0px 0px 60px -15px' }}>
-              <img
-                src={'./user.png'}
-                alt="User Image"
-                className="w-[auto] h-16 rounded-full mb-2 m-[auto]"
-              />
-              <p className="text-lg text-white">Hammad Javed</p>
-              {/* <p className="text-sm text-gray-300">{name}</p> */}
-            </div>
-            {/* sidebar */}
-            <DynamicMenu activeTab={activeTab} />
-            <img
-              src={'./Jahaanns.png'}
-              alt="User Image"
-              className="w-full h-[auto] rounded-full absolute m-[auto] bottom-0"
-            />
-          </aside>
-          <div className="flex-1 flex flex-col overflow-hidden">
-            {/* <NavBar></NavBar> */}
-            <header className="bg-[#0091cf] text-white mx-2 my-3 p-1 rounded-2xl flex">
-              <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> DashBoard</p>
-              </Link>
-              <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Diagram')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/sld' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faProjectDiagram} /> Diagram</p>
-              </Link>
-              <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Trends')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/custom_trend' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faArrowTrendUp} /> Trends</p>
-              </Link>
-              <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Alarms')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '#' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faBell} /> Alarms</p>
-              </Link>
-              <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Reports')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '#' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faFileLines} /> Reports</p>
-              </Link>
-              {/* <Link href="/user" className={`py-[8px] px-4`}>
+        {loading && <Preloader />} {/* Show preloader if loading is true */}
+
+        {/* <aside className="flex-shrink-0 w-64 bg-gray-800 text-white h-[97vh] m-3 rounded-2xl"> */}
+
+        <div className="flex-1 flex flex-col overflow-hidden">
+          {/* <NavBar></NavBar> */}
+          <header className="h-12">
+            <img src={'./gcl-logo.png'} className="h-11 p-1 pl-4"></img>
+            </header>
+          <header className="bg-[#1F5897] text-white mx-0 my-2 mt-0 flex text-[14px]">
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> DashBoard</p>
+            </Link>
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Custom')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/dash_1' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> Custom Dashboard</p>
+            </Link>
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Diagram')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/sld' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faProjectDiagram} /> Diagram</p>
+            </Link>
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Trends')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/custom_trend' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faArrowTrendUp} /> Trends</p>
+            </Link>
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Alarms')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '#' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faBell} /> Alarms</p>
+            </Link>
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Reports')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '#' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faFileLines} /> Reports</p>
+            </Link>
+            {/* <Link href="/user" className={`py-[8px] px-4`}>
                 <p className={`px-4 py-1 cursor-pointer rounded-lg ${pathname == "/user" ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faUserCog} /> User Managment</p>
               </Link> */}
-              <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Setting')}>
-                <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/user' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faGear} /> Settings</p>
-              </Link>
+            <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Setting')}>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/user' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faGear} /> Settings</p>
+            </Link>
+
+            {/* <img
+              src={'./logout.png'}
+              alt="User Image"
+              className="w-[auto] h-12 rounded-full ml-[auto] cursor-pointer"
+            /> */}
+          </header>
+          <div className="flex">
+            <aside className="flex-shrink-0 w-[256px] bg-[#F2F2F2] text-black h-[85vh] m-3 rounded-[7px] border-t-4 border-t-[#1F5897] relative border-2 border-[#808080]">
+              <div className="p-2 border-b-[1px] border-[#808080]">
+
+                <p className="text-[13px] py-1 text-black">Dashboards Section</p>
+                {/* <p className="text-sm text-gray-300">{name}</p> */}
+              </div>
+              {/* sidebar */}
+              <DynamicMenu activeTab={activeTab} />
               <img
-                src={'./logout.png'}
+                src={'./Jahaanns.png'}
                 alt="User Image"
-                className="w-[auto] h-12 rounded-full ml-[auto] cursor-pointer"
+                className="w-full h-[auto] rounded-full absolute m-[auto] bottom-0 opacity-80"
               />
-            </header>
+            </aside>
             <main className="flex-1 overflow-x-hidden overflow-y-auto m-3 bg-center bg-contain bg-no-repeat" style={{ backgroundImage: 'url("./bglogo.png")' }}>
               {children}
             </main>
           </div>
         </div>
+
+
       </body>
     </html>
   );

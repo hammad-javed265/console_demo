@@ -15,7 +15,7 @@ const NavBar = () => {
 // console.log(activeTab);
     return (
         <div>
-            <header className="bg-[#0091cf] text-white m-3 p-2 rounded-2xl flex">
+            <header className="bg-[#0091cf] text-white m-3 mt-0 p-2 rounded-2xl flex">
                 <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Home')}>
                     <p className={`px-4 py-1 cursor-pointer rounded-lg ${activeTab === 'Home' ? 'bg-white text-black' : ''}`}>Home</p>
                 </Link>

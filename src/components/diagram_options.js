@@ -32,8 +32,8 @@ const DiagramMenu = () => {
     return (
         <div>
 
-            <nav className={`mt-4 text-white text-lg `}>
-                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#12a7ff] rounded" onClick={toggleDashboardSubMenu}>
+            <nav className={`mt-4 text-black text-lg `}>
+                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#E5E5E5] rounded" onClick={toggleDashboardSubMenu}>
                     <p className='flex-grow text-[16px] slide-from-right'> Single Line Diagram </p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -53,19 +53,19 @@ const DiagramMenu = () => {
                 {showDashboardSubMenu && (
                     <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-5 text-[14px]">
                         <li>
-                            <Link href="/sld" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "/sld" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="/sld" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "/sld" ? 'bg-[#B4D5F8] text-black' : ''}`}>
                                 - Plant
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-black' : ''}`}>
                                 - Office
                             </Link>
                         </li>
                     </ul>
                 )}
 
-                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#12a7ff] rounded" onClick={toggleReportsSubMenu}>
+                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#E5E5E5] rounded" onClick={toggleReportsSubMenu}>
                     <p className='flex-grow text-[16px] slide-from-right'> Sankey Diagram </p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -84,18 +84,18 @@ const DiagramMenu = () => {
                 {showReportsSubMenu && (
                     <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-5 text-[14px]">
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-black' : ''}`}>
                                 - Plant
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-black' : ''}`}>
                                 - Office
                             </Link>
                         </li>
                     </ul>
                 )}
-                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#12a7ff] rounded" onClick={togglePlantSubMenu}>
+                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#E5E5E5] rounded" onClick={togglePlantSubMenu}>
                     <p className='flex-grow text-[16px] slide-from-right'> Heat Map </p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -114,12 +114,12 @@ const DiagramMenu = () => {
                 {showPlantSubMenu && (
                     <ul className="bg-[#fff] ml-8 text-black rounded slide-from-right mr-5 text-[14px]">
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-black' : ''}`}>
                                 - Plant
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-black' : ''}`}>
                                 - Office
                             </Link>
                         </li>

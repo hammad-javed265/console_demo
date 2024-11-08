@@ -32,9 +32,9 @@ const DashboardMenu = () => {
     return (
         <div>
 
-            <nav className={`mt-4 text-white text-lg`}>
-                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#12a7ff] rounded" onClick={toggleDashboardSubMenu}>
-                    <p className='flex-grow text-[16px] slide-from-right'> Plant Energy </p>
+            <nav className={`mt-4 text-gray-600 text-lg`}>
+                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#E5E5E5] rounded" onClick={toggleDashboardSubMenu}>
+                    <p className='flex-grow text-[14px] slide-from-right'> Plant Energy </p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -51,29 +51,29 @@ const DashboardMenu = () => {
                 </Link>
 
                 {showDashboardSubMenu && (
-                    <ul className="bg-[#fff] slide-from-right ml-8 text-black rounded mr-5 text-[14px]">
+                    <ul className="bg-[#fff] slide-from-right ml-8 text-gray-600 rounded mr-5 text-[13px]">
                         <li>
-                            <Link href="/" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "/" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="/" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "/" ? 'bg-[#B4D5F8] text-gray-600' : ''}`}>
                                 - Plant Summary
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-gray-600' : ''}`}>
                                 - Energy-Cost Comparision
                             </Link>
                         </li>
                     </ul>
                 )}
 
-                {/* <Link href="/sld" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "/sld" ? 'bg-[#2b388f] text-white mx-2' : ''}`}>
+                {/* <Link href="/sld" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "/sld" ? 'bg-[#2b388f] text-gray-600 mx-2' : ''}`}>
                     SLD
                 </Link>
-                <Link href="#" className="block py-2 px-4 hover:bg-[#12a7ff] rounded">
+                <Link href="#" className="block py-2 px-4 hover:bg-[#E5E5E5] rounded">
                     Trends
                 </Link> */}
 
-                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#12a7ff] rounded" onClick={toggleReportsSubMenu}>
-                    <p className='flex-grow text-[16px] slide-from-right'> Plant Process Energy </p>
+                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#E5E5E5] rounded" onClick={toggleReportsSubMenu}>
+                    <p className='flex-grow text-[14px] slide-from-right'> Plant Process Energy </p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -89,21 +89,21 @@ const DashboardMenu = () => {
                     </svg>
                 </Link>
                 {showReportsSubMenu && (
-                    <ul className="bg-[#fff] slide-from-right ml-8 text-black rounded mr-5 text-[14px]">
+                    <ul className="bg-[#fff] slide-from-right ml-8 text-gray-600 rounded mr-5 text-[13px]">
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-gray-600' : ''}`}>
                                 - Primary Utilities
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-gray-600' : ''}`}>
                                 - Secondary Utilities
                             </Link>
                         </li>
                     </ul>
                 )}
-                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#12a7ff] rounded" onClick={togglePlantSubMenu}>
-                    <p className='flex-grow text-[16px] slide-from-right'> Power Quality Performance </p>
+                <Link href="#" className="flex items-center py-3 px-4 hover:bg-[#E5E5E5] rounded" onClick={togglePlantSubMenu}>
+                    <p className='flex-grow text-[14px] slide-from-right'> Power Quality</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -119,14 +119,14 @@ const DashboardMenu = () => {
                     </svg>
                 </Link>
                 {showPlantSubMenu && (
-                    <ul className="bg-[#fff] slide-from-right ml-8 text-black rounded mr-5 text-[14px]">
+                    <ul className="bg-[#fff] slide-from-right ml-8 text-gray-600 rounded mr-5 text-[13px]">
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-gray-600' : ''}`}>
                                 - Power Quality Overview
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className={`block py-2 px-4 hover:bg-[#12a7ff] rounded ${pathname == "#" ? 'bg-[#2b37cc] text-white' : ''}`}>
+                            <Link href="#" className={`block py-2 px-4 hover:bg-[#E5E5E5] rounded ${pathname == "#" ? 'bg-[#B4D5F8] text-gray-600' : ''}`}>
                                 - Power Quality Details
                             </Link>
                         </li>
