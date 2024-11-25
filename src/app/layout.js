@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
         return 'Trends';
       } else if (window.location.pathname === '/user') {
         return 'Setting';
-      } else if (window.location.pathname === '/dash_1') {
+      } else if (window.location.pathname === '/dash_1' || window.location.pathname === '/dash_2' || window.location.pathname === '/dash_3' || window.location.pathname === '/dash_4' || window.location.pathname === '/dash_5' || window.location.pathname === '/dash_6') {
         return 'Custom';
       }
       // Add more conditions for other pathnames if needed
@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
               <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> DashBoard</p>
             </Link>
             <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Custom')}>
-              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/dash_1' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> Custom Dashboard</p>
+              <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/dash_1' || pathname === '/dash_2' || pathname === '/dash_3' || pathname === '/dash_4' || pathname === '/dash_5' || pathname === '/dash_6' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faDashboard} /> Custom Dashboard</p>
             </Link>
             <Link href="#" className={`py-[8px] px-4`} onClick={() => handleTabClick('Diagram')}>
               <p className={`px-3 py-1 cursor-pointer rounded-lg ${pathname === '/sld' ? 'bg-white text-black' : ''}`}><FontAwesomeIcon icon={faProjectDiagram} /> Diagram</p>

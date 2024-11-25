@@ -7,30 +7,24 @@ function ChartPopup({ closePopup, openOptionsPopup }) {
       <div className="bg-white rounded-lg shadow-lg p-6 w-[60%] max-w-[700px] relative">
         <h2 className="text-center text-gray-700 font-semibold mb-4 text-[22px]">Select Any Chart</h2>
         <div className="grid grid-cols-2 gap-6">
-          <img
-            src="PieChart.png"
-            alt="Pie Chart"
-            className="h-[200px] cursor-pointer justify-self-center"
-            onClick={() => openOptionsPopup("pie")}
-          />
-          <img
-            src="bar_chart.jpg"
-            alt="Bar Chart"
-            className="h-[160px] cursor-pointer mt-4"
-            onClick={() => openOptionsPopup("bar")}
-          />
-          <img
-            src="period.png"
-            alt="Period Over Period Bar Chart"
-            className="h-[200px] cursor-pointer"
-            onClick={() => openOptionsPopup("groupedBar")}
-          />
-          <img
-            src="barline1.jpg"
-            alt="Comparison Trends Line Chart"
-            className="h-[200px] cursor-pointer"
-            onClick={() => openOptionsPopup("line")}
-          />
+          {[
+            { label: "Pie Chart", img: "pie.jpg", type: "pie" },
+            { label: "Bar Chart", img: "bar.jpg", type: "bar" },
+            { label: "Period Over Period Bar Chart", img: "period.jpg", type: "groupedBar" },
+            { label: "Comparison Trends Line Chart", img: "line.jpg", type: "line" },
+          ].map((chart) => (
+            <div key={chart.type} className="relative flex justify-center items-center">
+              <div className="absolute top-[-15px] left-1/2 transform -translate-x-1/2 text-black font-bold bg-black bg-opacity-10 rounded-lg px-2 py-1">
+                {chart.label}
+              </div>
+              <img
+                src={chart.img}
+                alt={chart.label}
+                className="h-[200px] cursor-pointer"
+                onClick={() => openOptionsPopup(chart.type)}
+              />
+            </div>
+          ))}
         </div>
         <button
           onClick={closePopup}

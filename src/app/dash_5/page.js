@@ -5,8 +5,8 @@ import Custom_div from "@/components/custom_div";
 import ChartPopup from "@/components/chart_popup";
 import ChartOptionsPopup from "@/components/chart_options_popup";
 
-function CustomDash() {
-  const [chartConfigs, setChartConfigs] = useChartConfigs("customDashConfigs"); // Unique storage key
+function CustomDash5() {
+  const [chartConfigs, setChartConfigs] = useChartConfigs("customDash5Configs"); // Different storage key
   const [showChartPopup, setShowChartPopup] = useState(false);
   const [showOptionsPopup, setShowOptionsPopup] = useState(false);
   const [selectedDiv, setSelectedDiv] = useState(null);
@@ -71,4 +71,4 @@ function CustomDash() {
   );
 }
 
-export default CustomDash;
+export default CustomDash5;
